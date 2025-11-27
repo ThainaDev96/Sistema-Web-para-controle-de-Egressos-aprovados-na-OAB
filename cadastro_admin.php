@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Gestão de Egressos OAB - Faculdade Dom Bosco</title>
+    <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 10]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="#">
+    <meta name="keywords" content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="author" content="#">
+    <!-- Favicon icon -->
+    <link rel="icon" href="..\files\assets\images\favicon.ico" type="image/x-icon">
+    <!-- Google font--><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="..\files\bower_components\bootstrap\css\bootstrap.min.css">
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="..\files\assets\icon\themify-icons\themify-icons.css">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="..\files\assets\icon\icofont\css\icofont.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="..\files\assets\css\style.css">
+</head>
+
+<body class="fix-menu">
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div class='contain'>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+            </div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+
+    <section class="login-block">
+        <!-- Container-fluid starts -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <!-- Authentication card start -->
+                    
+                        <form class="md-float-material form-material" action="cadastro_processa.php" method="post">
+                            <div class="text-center">
+                                <img src="..\files\assets\images\logo.png" alt="logo.png"width="250">
+                            </div>
+                            <div class="auth-box card">
+                                <div class="card-block">
+                                    <div class="row m-b-20">
+                                        <div class="col-md-12">
+                                            <h3 class="text-center">Cadastre-se</h3>
+                                        </div>
+                                    </div>
+                                    <?php if (isset($_GET['erroMsg'])) { echo "<div style='color:red;font-weight:bold;margin-bottom:10px;'>".$_GET['erroMsg']."</div>"; }//mensagem de erro usuario já cadastrado ?>
+                                    
+                                    <div class="form-group form-primary">
+                                        <input type="text" name="usuario" class="form-control <?php if(strpos($_GET['erroCampo'] ?? '', 'usuario') !== false){ echo 'is-invalid'; } //is-invalid serve para marcar de vermelho o campo com erro?>" placeholder="Seu usuário">
+                                        <span class="form-bar"></span>
+                                    </div>
+                                    <div class="form-group form-primary">
+                                        <input type="email" name="email" class="form-control <?php if(strpos($_GET['erroCampo'] ?? '', 'email') !== false){ echo 'is-invalid'; } ?>" placeholder="Seu endereço de email">
+                                        <span class="form-bar"></span>
+                                    </div>
+                                    <div class="form-group form-primary">
+                                        <input type="password" name="senha" class="form-control <?php if(strpos($_GET['erroCampo'] ?? '', 'senha') !== false){ echo 'is-invalid'; } ?>" placeholder="Senha">
+                                        <span class="form-bar"></span>
+                                    </div>
+                                    <div class="row m-t-25 text-left">
+                                        <div class="col-12">
+                                            <div class="checkbox-fade fade-in-primary d-">
+                                                <label>
+                                                    <input type="checkbox" value="">
+                                                    <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                                    <span class="text-inverse">Lembrar-me</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <!--INSTRUÇÕES -->
+                                    <div class="row m-t-10">
+                                        <div class="col-12">
+                                            <small style="color: ; font-size: 0.75em; display: block; margin-bottom: 8px;">
+                                                * Nome de usuário: pelo menos 3 caracteres<br>
+                                                * Email: deve ser válido, ex: usuario@dominio.com<br>
+                                                * Senha: pelo menos 6 caracteres<br>
+                                                * Todos os campos são obrigatórios
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <p class="text-inverse text-left"><a href="index.php"><b class="f-w-600">Voltar ao site</b></a></p>
+                                        </div>
+                                    </div>
+                                    <div class="row m-t-05">
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Cadastrar</button>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- end of form -->
+                </div>
+                <!-- end of col-sm-12 -->
+            </div>
+            <!-- end of row -->
+        </div>
+        <!-- end of container-fluid -->
+    </section>
+    <!-- Required Jquery -->
+    <script type="text/javascript" src="..\files\bower_components\jquery\js\jquery.min.js"></script>
+    <script type="text/javascript" src="..\files\bower_components\jquery-ui\js\jquery-ui.min.js"></script>
+    <script type="text/javascript" src="..\files\bower_components\popper.js\js\popper.min.js"></script>
+    <script type="text/javascript" src="..\files\bower_components\bootstrap\js\bootstrap.min.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="..\files\bower_components\jquery-slimscroll\js\jquery.slimscroll.js"></script>
+    <!-- modernizr js -->
+    <script type="text/javascript" src="..\files\bower_components\modernizr\js\modernizr.js"></script>
+    <script type="text/javascript" src="..\files\bower_components\modernizr\js\css-scrollbars.js"></script>
+    <!-- i18next.min.js -->
+    <script type="text/javascript" src="..\files\bower_components\i18next\js\i18next.min.js"></script>
+    <script type="text/javascript" src="..\files\bower_components\i18next-xhr-backend\js\i18nextXHRBackend.min.js"></script>
+    <script type="text/javascript" src="..\files\bower_components\i18next-browser-languagedetector\js\i18nextBrowserLanguageDetector.min.js"></script>
+    <script type="text/javascript" src="..\files\bower_components\jquery-i18next\js\jquery-i18next.min.js"></script>
+    <script type="text/javascript" src="..\files\assets\js\common-pages.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+</body>
+
+</html>
